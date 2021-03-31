@@ -4,16 +4,12 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class PopUp {
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver","c:\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-        // declare variable for wait
-        WebDriverWait webWait = new WebDriverWait(driver, 10);
-
         String alertMessage = "";
 
         // launch browser with url
