@@ -12,7 +12,7 @@ public class formFill {
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver","c:\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("incognito","start-maximized");
+        options.addArguments("start-maximized");
         WebDriver driver = new ChromeDriver(options);
 
         // base url
@@ -24,6 +24,7 @@ public class formFill {
         // find email and password elements by id on the page
         WebElement email = driver.findElement(By.id("email_field"));
         WebElement password = driver.findElement(By.id("password_field"));
+        WebElement captcha = driver.findElement(By.className("captcha"));
 
         // WebDriverWait webWait = new WebDriverWait(driver, 10);
 
@@ -31,9 +32,12 @@ public class formFill {
 
         /*webWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email_field")));
         driver.findElement(By.id("email_field")).sendKeys("*****@gmail.com");*/
-        email.sendKeys("*****@gmail.com");
-        password.sendKeys("******");
+        email.sendKeys("sbukhovets@gmail.com");
+        password.sendKeys("proSerique5");
+
         System.out.println("TextFields are filled!");
+
+        captcha.click();
 
         // find button element and click it
         WebElement login = driver.findElement(By.name("go"));
@@ -42,6 +46,6 @@ public class formFill {
         System.out.println("Login done!");
 
         // close tab or browser
-        driver.close();
+        //driver.close();
     }
 }
